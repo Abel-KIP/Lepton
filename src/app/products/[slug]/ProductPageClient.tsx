@@ -16,9 +16,10 @@ function ProductGallery({ images, productName }: { images: string[]; productName
 
   const scrollToImage = (index: number) => {
     setActiveImage(index);
-    if (mainRef.current) {
-      const child = mainRef.current.children[index] as HTMLElement | undefined;
-      if (child) child.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+    const el = mainRef.current;
+    if (el) {
+      const child = el.children[index] as HTMLElement | undefined;
+      if (child) el.scrollTo({ left: child.offsetLeft, behavior: "smooth" });
     }
     if (thumbRef.current) {
       const t = thumbRef.current.children[index] as HTMLElement | undefined;
@@ -53,7 +54,13 @@ function ProductGallery({ images, productName }: { images: string[]; productName
     if (images.length <= 1) return;
     const id = window.setInterval(() => {
       if (isPaused.current) return;
-      scrollToImage((activeImage + 1) % images.length);
+      const next = (activeImage + 1) % images.length;
+      setActiveImage(next);
+      const el = mainRef.current;
+      if (el) {
+        const child = el.children[next] as HTMLElement | undefined;
+        if (child) el.scrollTo({ left: child.offsetLeft, behavior: "smooth" });
+      }
     }, 4000);
     return () => clearInterval(id);
   }, [activeImage, images]);
