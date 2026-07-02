@@ -9,7 +9,7 @@ export const getCallUrl = () => `tel:${PHONE_NUMBER}`;
 // High-quality Unsplash images — security & surveillance themed
 export const IMAGES = {
   // CCTV Solutions background (local asset in /public)
-  hero: "/CCTV%20Solutions",
+  hero: "/hero-bg.png",
   heroAlt: "/CCTV%20Solutions",
   cctv1: "/ptzcamera1.jpg",
   cctv2: "/bullet cameras.jpg",
