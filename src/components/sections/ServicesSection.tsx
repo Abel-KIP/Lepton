@@ -169,7 +169,7 @@ function CategoryBlock({ cat, index }: { cat: typeof CATEGORIES[0]; index: numbe
         transition={{ duration: 0.7, ease: [0.23, 1, 0.32, 1] }}
         className="relative w-full rounded-3xl overflow-hidden mb-8 bg-black"
 
-        style={{ height: "clamp(180px, 28vw, 420px)" }}
+        style={{ height: "clamp(220px, 28vw, 420px)" }}
       >
         {/* For specific categories, remove background image and keep a darker solid/gradient look */}
         {(cat.id === "cctv" || cat.id === "alarm" || cat.id === "access" || cat.id === "sensor") ? null : (
@@ -208,13 +208,12 @@ function CategoryBlock({ cat, index }: { cat: typeof CATEGORIES[0]; index: numbe
         />
 
         {/* Content on hero */}
-        <div className="absolute inset-0 flex flex-col justify-center px-4 md:px-8 lg:px-14 py-10">
-          {/* Extra bottom padding so CTAs never feel attached to the "line"/edge */}
-          <div className="max-w-2xl pb-6">
-            {/* Giant category name — this IS the headline */}
+        <div className="absolute inset-0 flex flex-col justify-center px-4 md:px-8 lg:px-14 py-6 md:py-10">
+          <div className="max-w-2xl pb-2 md:pb-6">
+            {/* Giant category name */}
             <h3
-              className="font-display font-black text-white leading-none mb-3 tracking-tight"
-              style={{ fontSize: "clamp(2.4rem, 6.8vw, 6.2rem)", textShadow: "0 4px 40px rgba(0,0,0,0.5)" }}
+              className="font-display font-black text-white leading-none mb-2 md:mb-3 tracking-tight"
+              style={{ fontSize: "clamp(1.6rem, 5.5vw, 6.2rem)", textShadow: "0 4px 40px rgba(0,0,0,0.5)" }}
             >
               <span style={{ color: cat.accentColor }}>{cat.label.split(" ")[0]}</span>
               {" "}
@@ -222,30 +221,30 @@ function CategoryBlock({ cat, index }: { cat: typeof CATEGORIES[0]; index: numbe
             </h3>
 
             <p
-              className="font-display font-semibold italic mb-5"
-              style={{ fontSize: "clamp(1rem, 2.2vw, 1.5rem)", color: `${cat.accentColor}cc` }}
+              className="font-display font-semibold italic mb-2 md:mb-5"
+              style={{ fontSize: "clamp(0.8rem, 1.8vw, 1.5rem)", color: `${cat.accentColor}cc` }}
             >
               {cat.tagline}
             </p>
-            <p className="text-white/50 text-sm lg:text-base leading-relaxed mb-6 max-w-sm">
+            <p className="text-white/50 text-xs md:text-base leading-relaxed mb-3 md:mb-6 max-w-sm hidden sm:block">
               {cat.desc}
             </p>
 
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-2 md:gap-3">
               <a
                 href={getWhatsAppUrl(cat.ctaMsg)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2 sm:px-6 sm:py-3 rounded-full text-sm font-semibold text-[#0a0a0a] transition-all hover:scale-105"
+                className="flex items-center gap-2 px-3 py-2 md:px-6 md:py-3 rounded-full text-xs md:text-sm font-semibold text-[#0a0a0a] transition-all hover:scale-105"
                 style={{ background: `linear-gradient(135deg, ${cat.accentColor}, #F5E070)` }}
               >
-                <MessageCircle size={15} /> {cat.cta}
+                <MessageCircle size={13} /> {cat.cta}
               </a>
               <a
                 href={getCallUrl()}
-                className="flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white border border-white/20 hover:border-white/50 transition-all"
+                className="flex items-center gap-2 px-3 py-2 md:px-6 md:py-3 rounded-full text-xs md:text-sm font-semibold text-white border border-white/20 hover:border-white/50 transition-all"
               >
-                <Phone size={15} /> Call Us
+                <Phone size={13} /> Call Us
               </a>
             </div>
           </div>
