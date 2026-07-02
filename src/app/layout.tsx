@@ -450,7 +450,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
+    <html lang="en" className={`${inter.variable} ${playfair.variable} overflow-x-hidden`}>
       <head>
         <Script async src="https://www.googletagmanager.com/gtag/js?id=G-31G7E0FXBL" strategy="afterInteractive" />
         <Script id="google-analytics" strategy="afterInteractive">

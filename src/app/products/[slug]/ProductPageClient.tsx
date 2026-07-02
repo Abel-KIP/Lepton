@@ -70,7 +70,7 @@ function ProductGallery({ images, productName }: { images: string[]; productName
       <motion.div
         initial={{ opacity: 0, scale: 0.98 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="rounded-3xl overflow-hidden bg-white/5 border border-white/10"
+        className="relative rounded-3xl overflow-hidden bg-white/5 border border-white/10"
       >
         <div
           ref={mainRef}
