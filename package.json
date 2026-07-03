@@ -5,13 +5,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "cf:build": "npx opennextjs-cloudflare build",
-    "cf:deploy": "npx opennextjs-cloudflare deploy",
     "start": "next start",
     "lint": "eslint"
   },
   "dependencies": {
-    "@opennextjs/cloudflare": "^1",
     "@gsap/react": "^2.1.2",
     "@radix-ui/react-dialog": "^1.1.17",
     "clsx": "^2.1.1",
