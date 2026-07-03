@@ -21,7 +21,7 @@ export function AnimatedCounter({
   className = "",
 }: AnimatedCounterProps) {
   const [count, setCount] = useState(0);
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLSpanElement>(null);
   const hasAnimated = useRef(false);
   const prefersReduced = useReducedMotion();
 
