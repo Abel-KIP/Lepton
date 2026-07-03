@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "lepton",
+  "name": "plane",
   "main": ".open-next/worker.js",
   "compatibility_date": "2026-07-03",
   "compatibility_flags": [
